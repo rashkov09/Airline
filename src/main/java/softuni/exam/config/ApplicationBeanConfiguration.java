@@ -42,7 +42,7 @@ public class ApplicationBeanConfiguration {
             @Override
             public LocalDateTime convert(MappingContext<String, LocalDateTime> mappingContext) {
                 return LocalDateTime
-                        .parse(mappingContext.getSource(), DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss"));
+                        .parse(mappingContext.getSource(),DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
             }
         });
         return modelMapper;

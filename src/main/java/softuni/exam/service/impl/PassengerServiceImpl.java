@@ -15,6 +15,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class PassengerServiceImpl implements PassengerService {
@@ -63,6 +64,15 @@ public class PassengerServiceImpl implements PassengerService {
 
     @Override
     public String getPassengersOrderByTicketsCountDescendingThenByEmail() {
-        return null;
+        return passengerRepository
+                .getPassengersOrderByTicketsCountDescendingThenByEmail()
+                .stream()
+                .map(Passenger::toString)
+                .collect(Collectors.joining("\n"));
+    }
+
+    @Override
+    public Passenger findPassengerByEmail(String email) {
+        return passengerRepository.findPassengerByEmail(email);
     }
 }

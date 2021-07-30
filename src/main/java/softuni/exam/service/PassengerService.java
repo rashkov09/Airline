@@ -17,4 +17,6 @@ public interface PassengerService {
 	String importPassengers() throws IOException;
 
 	String getPassengersOrderByTicketsCountDescendingThenByEmail();
+
+    Passenger findPassengerByEmail(String email);
 }

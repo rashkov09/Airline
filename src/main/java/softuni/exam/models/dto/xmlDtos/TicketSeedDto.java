@@ -28,16 +28,16 @@ public class TicketSeedDto {
     private String takeOff;
 
     @XmlElement(name = "from-town")
-    private String fromTownName;
+    private TownFromNameDto fromTownName;
 
     @XmlElement(name = "to-town")
-    private String toTownName;
+    private TownToNameDto toTownName;
 
     @XmlElement(name = "passenger")
-    private String passengerEmail;
+    private PassengerEmailDto passenger;
 
     @XmlElement(name =  "plane")
-    private String planeRegisterNumber;
+    private PlaneRegisterNumberDto plane;
 
     public TicketSeedDto() {
     }
@@ -66,35 +66,35 @@ public class TicketSeedDto {
         this.takeOff = takeOff;
     }
 
-    public String getFromTownName() {
+    public TownFromNameDto getFromTownName() {
         return fromTownName;
     }
 
-    public void setFromTownName(String fromTownName) {
+    public void setFromTownName(TownFromNameDto fromTownName) {
         this.fromTownName = fromTownName;
     }
 
-    public String getToTownName() {
+    public TownToNameDto getToTownName() {
         return toTownName;
     }
 
-    public void setToTownName(String toTownName) {
+    public void setToTownName(TownToNameDto toTownName) {
         this.toTownName = toTownName;
     }
 
-    public String getPassengerEmail() {
-        return passengerEmail;
+    public PassengerEmailDto getPassenger() {
+        return passenger;
     }
 
-    public void setPassengerEmail(String passengerEmail) {
-        this.passengerEmail = passengerEmail;
+    public void setPassenger(PassengerEmailDto passenger) {
+        this.passenger = passenger;
     }
 
-    public String getPlaneRegisterNumber() {
-        return planeRegisterNumber;
+    public PlaneRegisterNumberDto getPlane() {
+        return plane;
     }
 
-    public void setPlaneRegisterNumber(String planeRegisterNumber) {
-        this.planeRegisterNumber = planeRegisterNumber;
+    public void setPlane(PlaneRegisterNumberDto plane) {
+        this.plane = plane;
     }
 }

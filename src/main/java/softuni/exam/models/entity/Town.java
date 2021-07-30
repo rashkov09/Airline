@@ -13,6 +13,8 @@ public class Town extends BaseEntity{
     private Integer population;
     private String guide;
     private Set<Passenger> passengers;
+    private Set<Ticket> fromTickets;
+    private Set<Ticket> toTickets;
 
     public Town() {
     }
@@ -49,5 +51,23 @@ public class Town extends BaseEntity{
 
     public void setPassengers(Set<Passenger> passengers) {
         this.passengers = passengers;
+    }
+
+    @OneToMany(mappedBy = "fromTown")
+    public Set<Ticket> getFromTickets() {
+        return fromTickets;
+    }
+
+    public void setFromTickets(Set<Ticket> fromTickets) {
+        this.fromTickets = fromTickets;
+    }
+
+    @OneToMany(mappedBy = "toTown")
+    public Set<Ticket> getToTickets() {
+        return toTickets;
+    }
+
+    public void setToTickets(Set<Ticket> toTickets) {
+        this.toTickets = toTickets;
     }
 }

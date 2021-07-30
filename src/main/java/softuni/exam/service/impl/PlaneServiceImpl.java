@@ -66,4 +66,9 @@ public class PlaneServiceImpl implements PlaneService {
                 });
         return builder.toString();
     }
+
+    @Override
+    public Plane findPlaneByRegisterNumber(String registerNumber) {
+        return planeRepository.findPlaneByRegisterNumber(registerNumber);
+    }
 }

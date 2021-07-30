@@ -2,6 +2,7 @@ package softuni.exam.service;
 
 
 import org.springframework.stereotype.Service;
+import softuni.exam.models.entity.Plane;
 
 import javax.xml.bind.JAXBException;
 import java.io.FileNotFoundException;
@@ -16,4 +17,5 @@ public interface PlaneService {
 	
 	String importPlanes() throws JAXBException, FileNotFoundException;
 
+    Plane findPlaneByRegisterNumber(String registerNumber);
 }

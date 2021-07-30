@@ -70,12 +70,20 @@ public class Passenger extends BaseEntity{
         this.town = town;
     }
 
-    @OneToMany(mappedBy = "passenger")
+    @OneToMany(mappedBy = "passenger", fetch = FetchType.EAGER)
     public Set<Ticket> getTickets() {
         return tickets;
     }
 
     public void setTickets(Set<Ticket> tickets) {
         this.tickets = tickets;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Passenger %s  %s\n" +
+                "\tEmail - %s\n" +
+                "\tPhone - %s\n" +
+                "\tNumber of tickets - %d",getFirstName(),getLastName(),getEmail(),getPhoneNumber(),getTickets().size());
     }
 }
